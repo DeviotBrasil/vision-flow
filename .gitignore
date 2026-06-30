@@ -1,0 +1,48 @@
+# Ambiente virtual
+.venv/
+
+# Artefatos de empacotamento / build
+*.egg-info/
+build/
+dist/
+packaging/visionflow.ico
+packaging/branding.iss
+packaging/app_version.txt
+packaging/version_info.txt
+# Python embeddable baixado no build (não versionar)
+packaging/pybootstrap/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+
+# Cache de ferramentas
+.ruff_cache/
+
+# Modelos / pesos (YOLO) e bases locais
+*.pt
+*.sqlite
+*.db
+*.png
+!packaging/brand/*.png
+*.jpg
+*.log
+*.lib
+*.dll
+!src/visionflow/infrastructure/camera/opt/runtime/**/*.dll
+*.so
+*.dylib
+*.bin
+*.cti
+!src/visionflow/infrastructure/camera/opt/runtime/**/*.cti
+*.sys
+!src/visionflow/infrastructure/camera/opt/runtime/**/*.sys
+*.cam
+!src/visionflow/infrastructure/camera/opt/runtime/**/*.cam
+
+# Dados de execução gerados pelo SDK OPT em runtime local
+SystemLog/
+System/
+
+# Runtime local (capturas, gravações, miniaturas, banco)
+data/

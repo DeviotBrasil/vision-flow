@@ -1,0 +1,6 @@
+# Runtime OPT vendorizado (~97 MB) — Git LFS
+src/visionflow/infrastructure/camera/opt/runtime/** filter=lfs diff=lfs merge=lfs -text
+
+# Texto versionado normalmente no runtime
+src/visionflow/infrastructure/camera/opt/runtime/README.md -filter
+src/visionflow/infrastructure/camera/opt/runtime/MANIFEST.json -filter

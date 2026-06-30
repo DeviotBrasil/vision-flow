@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "visionflow"
+version = "1.2.5"
+description = "Vision Flow — sistema desktop de visão computacional para coleta de imagens e geração de datasets YOLO."
+requires-python = ">=3.12"
+dependencies = [
+    "PySide6==6.11.1",
+    "opencv-python==4.13.0.92",
+    "numpy==2.4.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff==0.15.14",
+]
+build = [
+    "pyinstaller>=6.14,<7",
+    "Pillow>=10,<12",
+]
+
+[project.scripts]
+visionflow = "visionflow.app:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+visionflow = [
+    "presentation/resources/icons/*.svg",
+    "presentation/resources/images/*.svg",
+    "presentation/themes/*.qss",
+]
+
+[tool.ruff]
+# Alvo do projeto (ver AGENTS.md): Python 3.12
+target-version = "py312"
+line-length = 88
+src = ["src"]
+# Binding ctypes vendorizado do fabricante (terceiros): fora do lint.
+extend-exclude = ["src/visionflow/infrastructure/camera/opt/_sdk"]
+
+[tool.ruff.lint]
+# Conjunto de regras: estilo, bugs prováveis, imports e parte do pylint.
+select = [
+    "E",    # pycodestyle (erros)
+    "W",    # pycodestyle (avisos)
+    "F",    # pyflakes (imports/variáveis não usados, import *)
+    "I",    # isort (ordenação de imports)
+    "B",    # flake8-bugbear (bugs prováveis)
+    "C4",   # flake8-comprehensions
+    "UP",   # pyupgrade (sintaxe moderna)
+    "SIM",  # flake8-simplify
+    "RUF",  # regras específicas do ruff
+    "PL",   # pylint (convenções, refatoração, erros)
+]
+ignore = [
+    "PLR2004",  # "magic value" em comparações — comum e ruidoso em código de UI
+]
+# Caracteres legítimos em textos de interface em português (não confundíveis).
+allowed-confusables = ["×", "—", "•", "✓", "º", "ª"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["visionflow"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

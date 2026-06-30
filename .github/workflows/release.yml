@@ -1,0 +1,98 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-installer:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Baixar arquivos Git LFS
+        run: git lfs pull
+
+      - name: Verificar runtime OPT
+        shell: pwsh
+        run: |
+          $dll = "src/visionflow/infrastructure/camera/opt/runtime/SciCamSDK.dll"
+          if (-not (Test-Path $dll)) {
+            Write-Error "SciCamSDK.dll ausente após git lfs pull. Verifique Git LFS no repositório."
+            exit 1
+          }
+          $size = (Get-Item $dll).Length
+          Write-Host "SciCamSDK.dll OK ($([math]::Round($size / 1MB, 1)) MB)"
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Instalar Inno Setup
+        run: choco install innosetup --no-progress -y
+
+      - name: Adicionar Inno Setup ao PATH
+        shell: pwsh
+        run: |
+          $isccDir = "${env:ProgramFiles(x86)}\Inno Setup 6"
+          if (-not (Test-Path "$isccDir\ISCC.exe")) {
+            Write-Error "ISCC.exe não encontrado em $isccDir"
+            exit 1
+          }
+          echo "$isccDir" >> $env:GITHUB_PATH
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[build]"
+
+      - name: Gerar instalador
+        run: python scripts/build_installer.py
+
+      - name: Localizar instalador gerado
+        shell: pwsh
+        run: |
+          $setups = Get-ChildItem -Path dist -Filter "VisionFlow-Setup-*.exe" -File
+          if ($setups.Count -eq 0) {
+            Write-Error "Nenhum instalador encontrado em dist/"
+            if (Test-Path dist) {
+              Get-ChildItem -Path dist -Recurse | Format-Table FullName, Length -AutoSize
+            } else {
+              Write-Error "Pasta dist/ não existe."
+            }
+            exit 1
+          }
+          $setup = $setups | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          if ($setup.Length -lt 1MB) {
+            Write-Error "Instalador suspeito (menor que 1 MB): $($setup.FullName)"
+            exit 1
+          }
+          "SETUP_EXE=$($setup.FullName)" >> $env:GITHUB_ENV
+          Write-Host "Instalador: $($setup.FullName) ($([math]::Round($setup.Length / 1MB, 1)) MB)"
+
+      - name: Publicar no GitHub Releases
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.SETUP_EXE }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+
+      - name: Anexar artefato (execução manual)
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: VisionFlow-Setup
+          path: ${{ env.SETUP_EXE }}
+          if-no-files-found: error

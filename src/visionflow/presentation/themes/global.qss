@@ -1,0 +1,791 @@
+/* Estilos globais (estrutura, tipografia e dimensões).
+   Cores e fundos por tema ficam em light.qss / dark.qss. */
+
+/* ---- Tipografia base ---- */
+QMainWindow,
+QWidget {
+    font-family: "Inter", "Segoe UI", "SF Pro Text", "Helvetica Neue", sans-serif;
+    font-size: 13px;
+}
+
+/* ---- Layout principal (dimensões) ---- */
+#top_frame {
+    min-height: 47px;
+    max-height: 47px;
+}
+
+#menu_frame {
+    min-width: 260px;
+    max-width: 260px;
+}
+
+/* ---- Barra de título (sempre escura no protótipo) ---- */
+#title_wordmark {
+    background: transparent;
+}
+
+#title_version {
+    color: #6E6E73;
+    font-size: 11px;
+    font-weight: 400;
+    background: transparent;
+    padding-left: 4px;
+}
+
+#title_separator {
+    background-color: #3A3A3C;
+    min-width: 1px;
+    max-width: 1px;
+    min-height: 15px;
+    max-height: 15px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+#title_subtitle {
+    color: #6E6E73;
+    font-size: 11px;
+    font-weight: 400;
+    background: transparent;
+}
+
+#title_icon_button,
+#btn_theme {
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    padding: 0;
+    margin: 0;
+    min-width: 34px;
+    max-width: 34px;
+    min-height: 34px;
+    max-height: 34px;
+}
+
+#title_icon_button:hover,
+#btn_theme:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#title_icon_button:pressed,
+#btn_theme:pressed {
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+/* ---- Sidebar (estrutura) ---- */
+#sidebar_scroll {
+    background-color: transparent;
+}
+
+/* ---- Rolagem vertical das telas de conteúdo ---- */
+#screen_scroll {
+    background-color: transparent;
+    border: none;
+}
+
+#sidebar_nav_container {
+    background-color: transparent;
+    padding-top: 17px;
+}
+
+#sidebar_section_header {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    min-height: 24px;
+    padding: 10px 21px 2px 21px;
+    background: transparent;
+}
+
+#sidebar_footer {
+    background-color: transparent;
+    padding-top: 14px;
+    padding-bottom: 13px;
+}
+
+#nav_item,
+#nav_item_disabled {
+    background-color: transparent;
+    border: none;
+    border-left: 2px solid transparent;
+    border-radius: 0;
+    min-height: 36px;
+    padding: 9px 17px 9px 19px;
+}
+
+#nav_item[active="true"] {
+    border-left: 2px solid #0066CC;
+}
+
+#nav_icon {
+    background: transparent;
+    min-width: 15px;
+    max-width: 15px;
+    min-height: 15px;
+    max-height: 15px;
+}
+
+#nav_text {
+    font-size: 13px;
+    background: transparent;
+}
+
+#nav_text[state="active"] {
+    font-weight: 600;
+}
+
+#nav_text[state="enabled"],
+#nav_text[state="disabled"] {
+    font-weight: 400;
+}
+
+#nav_badge {
+    font-size: 9px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 2px 6px;
+    min-width: 44px;
+}
+
+#screen_title {
+    font-size: 16px;
+    font-weight: 400;
+    background: transparent;
+}
+
+/* ---- Controles genéricos (estrutura) ---- */
+QPushButton {
+    border-radius: 6px;
+    padding: 6px 14px;
+}
+
+/* Barra de título: sem estilo de botão genérico */
+#title_icon_button,
+#btn_theme {
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+}
+
+QLineEdit,
+QTextEdit,
+QPlainTextEdit,
+QSpinBox,
+QDoubleSpinBox,
+QComboBox,
+QDateEdit {
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+QFrame#integer_spin_field {
+    border-radius: 6px;
+    min-height: 34px;
+    max-height: 34px;
+}
+
+QFrame#integer_spin_field QSpinBox#integer_spin_field_input {
+    border: none;
+    background: transparent;
+    padding: 0 8px;
+    min-height: 34px;
+    max-height: 34px;
+    font-size: 13px;
+}
+
+QFrame#integer_spin_field QLineEdit {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+}
+
+QFrame#integer_spin_stepper {
+    border-left: 1px solid;
+}
+
+QPushButton#integer_spin_step_up,
+QPushButton#integer_spin_step_down {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    min-width: 22px;
+    max-width: 22px;
+}
+
+QLineEdit:focus,
+QTextEdit:focus,
+QPlainTextEdit:focus,
+QSpinBox:focus,
+QDoubleSpinBox:focus,
+QComboBox:focus,
+QDateEdit:focus {
+    border-color: #0066CC;
+}
+
+QComboBox::drop-down,
+QDateEdit::drop-down {
+    border: none;
+    width: 24px;
+}
+
+QComboBox::down-arrow,
+QDateEdit::down-arrow {
+    image: url("@ICONS_DIR@/icon_chevron_down.svg");
+    width: 12px;
+    height: 12px;
+}
+
+QComboBox QAbstractItemView {
+    outline: none;
+}
+
+QComboBox QAbstractItemView::item {
+    min-height: 30px;
+    padding: 0 10px;
+}
+
+QScrollBar:vertical {
+    width: 8px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    border-radius: 4px;
+    min-height: 24px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+QScrollBar:horizontal {
+    height: 8px;
+    margin: 0;
+}
+
+QScrollBar::handle:horizontal {
+    border-radius: 4px;
+    min-width: 24px;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+QToolTip {
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+QMenu {
+    padding: 4px;
+}
+
+QMenu::item {
+    padding: 6px 24px 6px 12px;
+    border-radius: 4px;
+}
+
+QMenu::item:selected {
+    background-color: #0066CC;
+    color: #FFFFFF;
+}
+
+QLabel {
+    background: transparent;
+}
+
+/* ====================================================================
+   Telas Principal e Câmera — dimensões e tipografia (cores no tema)
+   ==================================================================== */
+
+/* ---- Cabeçalho de conteúdo ---- */
+#content_header_title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#content_header_subtitle {
+    font-size: 13px;
+}
+
+/* ---- Stepper ---- */
+#stepper_circle {
+    min-width: 26px;
+    max-width: 26px;
+    min-height: 26px;
+    max-height: 26px;
+    border-radius: 13px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#stepper_label {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#stepper_connector {
+    min-width: 28px;
+    max-width: 28px;
+}
+
+/* ---- Corpo do wizard ---- */
+#wizard_step_title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#wizard_step_subtitle {
+    font-size: 13px;
+}
+
+#field_label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+
+#model_combo {
+    min-height: 38px;
+}
+
+QDateEdit#captures_start_date,
+QDateEdit#captures_end_date,
+QDateEdit#recordings_start_date,
+QDateEdit#recordings_end_date,
+QDateEdit#logs_day_date {
+    min-height: 28px;
+    max-height: 28px;
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+QLineEdit#logs_search_input {
+    min-height: 28px;
+    max-height: 28px;
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+#info_card {
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+#info_card_title {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#info_card_desc {
+    font-size: 12px;
+}
+
+#wizard_status {
+    font-size: 12px;
+}
+
+/* ---- Botões em pílula (toolbar Principal, modais) ---- */
+PillPushButton,
+QPushButton[vfShape="pill"] {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+PillPushButton[vfVariant="primary"],
+PillPushButton[vfVariant="secondary"],
+PillPushButton[vfVariant="success"],
+PillPushButton[vfVariant="primary-outline"],
+PillPushButton[vfVariant="danger-outline"],
+PillPushButton[vfVariant="neutral-outline"],
+QPushButton[vfShape="pill"][vfVariant="primary"],
+QPushButton[vfShape="pill"][vfVariant="secondary"],
+QPushButton[vfShape="pill"][vfVariant="success"],
+QPushButton[vfShape="pill"][vfVariant="primary-outline"],
+QPushButton[vfShape="pill"][vfVariant="danger-outline"],
+QPushButton[vfShape="pill"][vfVariant="neutral-outline"] {
+    padding: 7px 18px;
+}
+
+PillPushButton[vfVariant="danger"],
+QPushButton[vfShape="pill"][vfVariant="danger"] {
+    padding: 6px 17px;
+}
+
+/* ---- Banner de sucesso ---- */
+#success_banner {
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+#success_banner_text {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#logs_error_banner_text,
+#captures_feedback_banner_text,
+#recordings_feedback_banner_text {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#loading_dialog_message {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#loading_dialog_status {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+#loading_dialog_progress {
+    border: none;
+    border-radius: 3px;
+    min-height: 6px;
+    max-height: 6px;
+}
+
+/* ---- Tabela de dispositivos ---- */
+#device_table {
+    border-radius: 8px;
+}
+
+#device_table::item {
+    padding: 6px 8px;
+}
+
+#device_table {
+    border-radius: 8px;
+}
+
+/* ---- Tabela de logs (estilo planilha) ---- */
+#logs_table::item {
+    padding: 2px 6px;
+}
+
+#logs_table {
+    border-radius: 0;
+    font-size: 12px;
+}
+
+#logs_table QHeaderView::section {
+    padding: 4px 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+QHeaderView::section {
+    padding: 8px;
+    border: none;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* ---- Preview + metadados (wizard Câmera) ---- */
+#camera_preview_block {
+    background: transparent;
+}
+
+/* ---- Chips de metadados ---- */
+#metadata_chips {
+    background: transparent;
+}
+
+#metadata_chip {
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-width: 0;
+}
+
+#metadata_chip_caption {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+
+#metadata_chip_value {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ---- Preview ---- */
+#camera_preview {
+    border-radius: 12px;
+}
+
+#camera_preview_canvas {
+    font-size: 13px;
+}
+
+#video_playback_controls {
+    min-height: 49px;
+    max-height: 49px;
+}
+
+#video_playback_time {
+    font-size: 12px;
+    font-weight: 500;
+    min-width: 40px;
+}
+
+#video_playback_slider {
+    min-height: 20px;
+}
+
+#video_playback_button {
+    border-radius: 17px;
+}
+
+/* ---- Toolbar da tela Principal (Figma: faixa 59px, pílulas ~33px) ---- */
+#principal_toolbar {
+    min-height: 59px;
+    max-height: 59px;
+}
+
+#toolbar_separator {
+    min-width: 1px;
+    max-width: 1px;
+    min-height: 21px;
+    max-height: 21px;
+}
+
+/* Badge e chips em pílula (margens no Python). */
+#status_badge,
+#toolbar_chip_counter,
+#toolbar_chip_path {
+    border-radius: 17px;
+}
+
+#toolbar_chip_value {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#toolbar_chip_caption {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+#toolbar_chip_path_text {
+    font-size: 11px;
+    font-weight: 400;
+    max-width: 220px;
+}
+
+#status_badge_dot {
+    border-radius: 5px;
+    min-width: 9px;
+    max-width: 9px;
+    min-height: 9px;
+    max-height: 9px;
+}
+
+#status_badge_text {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ---- Painel inferior da Principal (capturas / gravações) ---- */
+#main_recent_tab {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#capture_strip_scroll,
+#capture_strip_viewport,
+#capture_strip_container,
+#capture_strip_scroll_page,
+#capture_strip_body,
+#recording_strip_scroll,
+#recording_strip_viewport,
+#recording_strip_container,
+#recording_strip_scroll_page,
+#recording_strip_body {
+    border: none;
+}
+
+#capture_thumb,
+#recording_thumb {
+    border-radius: 6px;
+}
+
+#capture_thumb_image,
+#recording_thumb_image {
+    border-radius: 5px;
+}
+
+#capture_thumb_hover,
+#recording_thumb_hover {
+    border-radius: 5px;
+}
+
+#capture_thumb_badge,
+#recording_thumb_badge {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 9px;
+    font-weight: 400;
+}
+
+#capture_strip_empty,
+#recording_strip_empty {
+    font-size: 12px;
+}
+
+/* ---- Tela Capturas (galeria — Figma CaptureGallery) ---- */
+#captures_header_title,
+#recordings_header_title,
+#datasets_header_title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.28px;
+}
+
+#captures_header_subtitle,
+#captures_results_label,
+#captures_footer_caption,
+#captures_range_label,
+#recordings_header_subtitle,
+#recordings_results_label,
+#recordings_footer_caption,
+#recordings_range_label,
+#datasets_header_subtitle {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+#captures_filter_label,
+#recordings_filter_label,
+#datasets_toolbar_label {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+#datasets_toolbar QComboBox,
+#datasets_export_format {
+    min-height: 28px;
+    max-height: 28px;
+    padding: 2px 8px;
+    font-size: 12px;
+}
+
+QFrame#integer_spin_field[vfCompact="true"] QSpinBox#integer_spin_field_input {
+    font-size: 12px;
+    padding: 0 6px;
+}
+
+#captures_empty,
+#recordings_empty,
+#logs_empty,
+#datasets_empty {
+    font-size: 13px;
+}
+
+/* ---- Tela Logs ---- */
+#logs_header_title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.28px;
+}
+
+#logs_header_subtitle,
+#logs_filter_label {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+#gallery_capture_card,
+#gallery_recording_card {
+    border-radius: 12px;
+}
+
+#gallery_capture_card[selected="true"],
+#gallery_recording_card[selected="true"] {
+    border-width: 2px;
+}
+
+#gallery_card_checkbox {
+    border-radius: 6px;
+}
+
+#gallery_capture_card_image,
+#gallery_recording_card_image {
+    border-radius: 11px;
+}
+
+#gallery_capture_card_hover,
+#gallery_recording_card_hover {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+#gallery_capture_card_overlay,
+#gallery_recording_card_overlay {
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+
+#gallery_capture_card_filename,
+#gallery_recording_card_filename {
+    font-size: 9px;
+    font-weight: 400;
+}
+
+#gallery_capture_card_datetime,
+#gallery_recording_card_datetime {
+    font-size: 9px;
+    font-weight: 400;
+}
+
+#capture_detail_subtitle,
+#capture_edit_subtitle,
+#recording_detail_subtitle {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+#capture_edit_field_label {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* ---- QFileDialog (estrutura; cores nos temas) ---- */
+QFileDialog#visionflow_file_dialog QListView::item,
+QFileDialog#visionflow_file_dialog QTreeView::item {
+    padding: 4px 6px;
+}
+
+QFileDialog#visionflow_file_dialog QHeaderView::section {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 8px;
+}
+
+QFileDialog#visionflow_file_dialog QPushButton {
+    min-height: 30px;
+    padding: 6px 16px;
+    border-radius: 6px;
+}
+
+/* ---- QMessageBox (estrutura; cores nos temas) ---- */
+QMessageBox#visionflow_message_box {
+    min-width: 560px;
+}
+
+QMessageBox#visionflow_message_box QPushButton {
+    min-height: 30px;
+    padding: 6px 16px;
+    border-radius: 6px;
+}
+

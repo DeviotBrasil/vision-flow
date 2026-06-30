@@ -1,0 +1,1031 @@
+/* Tema claro — cores e fundos (estrutura em global.qss). */
+
+QMainWindow,
+QWidget {
+    color: #1D1D1F;
+}
+
+#main_frame,
+#center_frame,
+#content_frame,
+#content_stack,
+#screen_scroll {
+    background-color: #FFFFFF;
+}
+
+#top_frame {
+    background-color: #1D1D1F;
+    border-bottom: 1px solid #3A3A3C;
+}
+
+#menu_frame {
+    background-color: #F5F5F7;
+    border-right: 1px solid #D2D2D7;
+}
+
+#sidebar_section_header {
+    color: #6E6E73;
+}
+
+#sidebar_footer {
+    border-top: 1px solid #D2D2D7;
+}
+
+#nav_item:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+#nav_item[active="true"] {
+    background-color: rgba(0, 102, 204, 0.08);
+}
+
+#nav_text[state="enabled"] {
+    color: #1D1D1F;
+}
+
+#nav_text[state="active"] {
+    color: #0066CC;
+}
+
+#nav_text[state="disabled"] {
+    color: #D2D2D7;
+}
+
+#nav_badge {
+    color: #6E6E73;
+    background-color: #EBEBED;
+}
+
+#principal_screen,
+#camera_screen,
+#output_screen,
+#dataset_screen,
+#online_screen,
+#settings_screen,
+#screen_title {
+    color: #D2D2D7;
+}
+
+QPushButton {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+}
+
+QPushButton:hover {
+    background-color: #F5F5F7;
+}
+
+QPushButton:pressed {
+    background-color: #E5E5EA;
+}
+
+QPushButton:disabled {
+    color: #AEAEB2;
+    background-color: #F5F5F7;
+    border-color: #E5E5EA;
+}
+
+QLineEdit,
+QTextEdit,
+QPlainTextEdit,
+QSpinBox,
+QDoubleSpinBox,
+QComboBox,
+QDateEdit {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+    selection-background-color: #0066CC;
+    selection-color: #FFFFFF;
+}
+
+QFrame#integer_spin_field {
+    background-color: #FFFFFF;
+    border: 1px solid #D2D2D7;
+}
+
+QFrame#integer_spin_field QSpinBox#integer_spin_field_input {
+    color: #1D1D1F;
+    selection-background-color: #0066CC;
+    selection-color: #FFFFFF;
+}
+
+QFrame#integer_spin_stepper {
+    background-color: #F5F5F7;
+    border-left-color: #D2D2D7;
+}
+
+QPushButton#integer_spin_step_up {
+    border-bottom: 1px solid #D2D2D7;
+}
+
+QPushButton#integer_spin_step_up,
+QPushButton#integer_spin_step_down {
+    background-color: transparent;
+}
+
+QPushButton#integer_spin_step_up:hover,
+QPushButton#integer_spin_step_down:hover {
+    background-color: #E5E5EA;
+}
+
+QPushButton#integer_spin_step_up:pressed,
+QPushButton#integer_spin_step_down:pressed {
+    background-color: #D2D2D7;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+    selection-background-color: #BFDBF7;
+    selection-color: #1D1D1F;
+}
+
+QComboBox QAbstractItemView::item:selected,
+QComboBox QAbstractItemView::item:hover {
+    background-color: #BFDBF7;
+    color: #1D1D1F;
+}
+
+QScrollBar:vertical {
+    background: #F5F5F7;
+}
+
+QScrollBar::handle:vertical {
+    background: #D2D2D7;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #AEAEB2;
+}
+
+QScrollBar:horizontal {
+    background: #F5F5F7;
+}
+
+QScrollBar::handle:horizontal {
+    background: #D2D2D7;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #AEAEB2;
+}
+
+QToolTip {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+}
+
+QMenu {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+}
+
+/* ====================================================================
+   Telas Principal e Câmera — cores (tema claro)
+   ==================================================================== */
+
+#content_header_subtitle,
+#wizard_step_subtitle,
+#wizard_status,
+#info_card_desc,
+#capture_strip_empty,
+#recording_strip_empty,
+#captures_empty,
+#recordings_empty,
+#logs_empty,
+#captures_header_subtitle,
+#captures_results_label,
+#captures_footer_caption,
+#captures_range_label,
+#recordings_header_subtitle,
+#recordings_results_label,
+#recordings_footer_caption,
+#recordings_range_label,
+#logs_header_subtitle,
+#datasets_header_subtitle,
+#capture_detail_subtitle,
+#capture_edit_subtitle {
+    color: #6E6E73;
+}
+
+#field_label,
+#metadata_chip_caption,
+#main_recent_tab,
+#captures_filter_label,
+#recordings_filter_label,
+#logs_filter_label,
+#datasets_toolbar_label,
+#datasets_classes_title {
+    color: #8E8E93;
+}
+
+/* Stepper */
+#stepper_circle[state="pending"] {
+    background-color: #E5E5EA;
+    color: #8E8E93;
+}
+
+#stepper_circle[state="active"] {
+    background-color: #0066CC;
+    color: #FFFFFF;
+}
+
+#stepper_circle[state="done"] {
+    background-color: #34C759;
+    color: #FFFFFF;
+}
+
+#stepper_label[state="pending"] {
+    color: #8E8E93;
+}
+
+#stepper_label[state="active"],
+#stepper_label[state="done"] {
+    color: #1D1D1F;
+}
+
+/* Card informativo */
+#info_card {
+    background-color: rgba(0, 102, 204, 0.06);
+    border: 1px solid rgba(0, 102, 204, 0.20);
+}
+
+#info_card_title {
+    color: #0066CC;
+}
+
+/* Botões padronizados (vfVariant) */
+QPushButton[vfVariant="primary"] {
+    background-color: #0066CC;
+    color: #FFFFFF;
+    border: 1px solid #0066CC;
+}
+
+QPushButton[vfVariant="primary"]:hover {
+    background-color: #0058B0;
+}
+
+QPushButton[vfVariant="primary"]:pressed {
+    background-color: #004C99;
+}
+
+QPushButton[vfVariant="primary"]:disabled {
+    background-color: #B7D4F0;
+    border-color: #B7D4F0;
+    color: #FFFFFF;
+}
+
+QPushButton[vfVariant="secondary"] {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+}
+
+QPushButton[vfVariant="secondary"]:hover {
+    background-color: #F5F5F7;
+}
+
+QPushButton[vfVariant="secondary"]:pressed {
+    background-color: #EBEBED;
+}
+
+QPushButton[vfVariant="secondary"]:disabled {
+    color: #AEAEB2;
+    background-color: #FFFFFF;
+    border-color: #E5E5EA;
+}
+
+QPushButton[vfVariant="success"] {
+    background-color: #34C759;
+    color: #FFFFFF;
+    border: 1px solid #34C759;
+}
+
+QPushButton[vfVariant="success"]:hover {
+    background-color: #2DB14F;
+}
+
+QPushButton[vfVariant="danger"] {
+    background-color: #FF3B30;
+    color: #FFFFFF;
+    border: none;
+}
+
+QPushButton[vfVariant="danger"]:hover {
+    background-color: #E5352B;
+}
+
+QPushButton[vfVariant="primary-outline"] {
+    background-color: #FFFFFF;
+    color: #0066CC;
+    border: 1px solid #0066CC;
+}
+
+QPushButton[vfVariant="primary-outline"]:hover {
+    background-color: #F5F5F7;
+}
+
+QPushButton[vfVariant="primary-outline"]:disabled {
+    color: #AEAEB2;
+    border-color: #E5E5EA;
+}
+
+QPushButton[vfVariant="danger-outline"] {
+    background-color: #FFFFFF;
+    color: #FF3B30;
+    border: 1px solid #FF3B30;
+}
+
+QPushButton[vfVariant="danger-outline"]:hover {
+    background-color: #FFF5F5;
+}
+
+QPushButton[vfVariant="danger-outline"]:disabled,
+PillPushButton[vfVariant="danger-outline"]:disabled {
+    color: #D2D2D7;
+    border-color: #E5E5EA;
+}
+
+QPushButton[vfVariant="neutral-outline"] {
+    background-color: #FFFFFF;
+    color: #6E6E73;
+    border: 1px solid #D2D2D7;
+}
+
+QPushButton[vfVariant="neutral-outline"]:hover {
+    background-color: #F5F5F7;
+}
+
+QPushButton[vfVariant="neutral-outline"]:disabled {
+    color: #D2D2D7;
+    border-color: #E5E5EA;
+}
+
+QPushButton[vfVariant="neutral-outline"]:checked {
+    background-color: rgba(0, 102, 204, 0.10);
+    color: #0066CC;
+    border: 1px solid #0066CC;
+}
+
+/* Banner de sucesso */
+#success_banner {
+    background-color: rgba(52, 199, 89, 0.10);
+    border: 1px solid rgba(52, 199, 89, 0.35);
+}
+
+#success_banner_text {
+    color: #248A3D;
+}
+
+#logs_error_banner,
+#captures_feedback_banner,
+#recordings_feedback_banner {
+    background-color: rgba(255, 59, 48, 0.10);
+    border-bottom: 1px solid rgba(255, 59, 48, 0.35);
+}
+
+#logs_error_banner_text,
+#captures_feedback_banner_text,
+#recordings_feedback_banner_text {
+    color: #D70015;
+}
+
+#visionflow_loading_dialog {
+    background-color: #FFFFFF;
+}
+
+#loading_dialog_message {
+    color: #1D1D1F;
+}
+
+#loading_dialog_status {
+    color: #636366;
+}
+
+#loading_dialog_progress {
+    background-color: #E5E5EA;
+}
+
+#loading_dialog_progress::chunk {
+    background-color: #0066CC;
+}
+
+/* Tabela de dispositivos */
+#device_table {
+    background-color: #FFFFFF;
+    border: 1px solid #D2D2D7;
+    alternate-background-color: #F5F5F7;
+    color: #1D1D1F;
+    selection-background-color: #CCE4F7;
+    selection-color: #1D1D1F;
+}
+
+#device_table::item:selected {
+    background-color: #CCE4F7;
+    color: #1D1D1F;
+}
+
+#device_table::item:selected:active {
+    background-color: #BFDBF7;
+    color: #1D1D1F;
+}
+
+#device_table::item:selected:!active {
+    background-color: #CCE4F7;
+    color: #1D1D1F;
+}
+
+QHeaderView::section {
+    background-color: #F5F5F7;
+    color: #6E6E73;
+    border-bottom: 1px solid #D2D2D7;
+}
+
+/* Chips de metadados */
+#metadata_chip {
+    background-color: #F5F5F7;
+}
+
+#metadata_chip_value {
+    color: #1D1D1F;
+}
+
+/* Preview (sempre escuro para destacar a imagem) */
+#camera_preview {
+    background-color: #0B0B0C;
+    border: 1px solid #D2D2D7;
+}
+
+#camera_preview_canvas {
+    color: #8E8E93;
+}
+
+#video_playback_controls {
+    background-color: #F5F5F7;
+    border-top: 1px solid #D2D2D7;
+}
+
+#video_playback_time {
+    color: #6E6E73;
+}
+
+#video_playback_slider::groove:horizontal {
+    background: #D2D2D7;
+    height: 4px;
+    border-radius: 2px;
+}
+
+#video_playback_slider::handle:horizontal {
+    background: #0066CC;
+    width: 12px;
+    height: 12px;
+    margin: -4px 0;
+    border-radius: 6px;
+}
+
+#video_playback_slider::sub-page:horizontal {
+    background: #0066CC;
+    height: 4px;
+    border-radius: 2px;
+}
+
+/* Toolbar (faixa #F5F5F7 + controles em pílula) */
+#principal_toolbar {
+    background-color: #F5F5F7;
+    border-bottom: 1px solid #D2D2D7;
+}
+
+#toolbar_separator {
+    background-color: #D2D2D7;
+}
+
+#status_badge,
+#toolbar_chip_counter,
+#toolbar_chip_path {
+    background-color: #FFFFFF;
+    border: 1px solid #D2D2D7;
+}
+
+#toolbar_chip_path:hover {
+    border-color: #AEAEB2;
+}
+
+#toolbar_chip_value {
+    color: #0066CC;
+}
+
+#toolbar_chip_caption,
+#toolbar_chip_path_text {
+    color: #6E6E73;
+}
+
+/* Badge de status */
+#status_badge_dot[state="disconnected"] {
+    background-color: #AEAEB2;
+}
+
+#status_badge_dot[state="searching"],
+#status_badge_dot[state="connecting"] {
+    background-color: #0066CC;
+}
+
+#status_badge_dot[state="connected"] {
+    background-color: #34C759;
+    border: none;
+}
+
+#status_badge_dot[state="error"] {
+    background-color: #FF3B30;
+}
+
+#status_badge_text[state="disconnected"] {
+    color: #6E6E73;
+}
+
+#status_badge_text[state="connected"] {
+    color: #34C759;
+}
+
+#status_badge_text[state="error"] {
+    color: #FF3B30;
+}
+
+/* Painel inferior da Principal (#F5F5F7) */
+#main_recent_panel {
+    background-color: #F5F5F7;
+    border-top: 1px solid #D2D2D7;
+}
+
+#main_recent_tab[active="true"] {
+    color: #1D1D1F;
+}
+
+#main_recent_tab:hover {
+    color: #1D1D1F;
+}
+
+#capture_strip_scroll,
+#capture_strip_viewport,
+#capture_strip_container,
+#capture_strip_scroll_page,
+#capture_strip_body,
+#recording_strip_scroll,
+#recording_strip_viewport,
+#recording_strip_container,
+#recording_strip_scroll_page,
+#recording_strip_body {
+    background-color: #F5F5F7;
+}
+
+#capture_thumb,
+#recording_thumb {
+    border: 1px solid #D2D2D7;
+    background-color: #050508;
+}
+
+#capture_thumb[hovered="true"],
+#recording_thumb[hovered="true"] {
+    border-color: #0066CC;
+}
+
+#capture_thumb_image,
+#recording_thumb_image {
+    background-color: #050508;
+}
+
+#capture_thumb_hover,
+#recording_thumb_hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#capture_thumb_badge,
+#recording_thumb_badge {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#capture_strip_empty,
+#recording_strip_empty {
+    color: #D2D2D7;
+}
+
+QScrollArea#capture_strip_scroll QScrollBar:horizontal,
+QScrollArea#recording_strip_scroll QScrollBar:horizontal {
+    background: #FFFFFF;
+    height: 6px;
+    margin: 4px 0 0 0;
+}
+
+QScrollArea#capture_strip_scroll QScrollBar::handle:horizontal,
+QScrollArea#recording_strip_scroll QScrollBar::handle:horizontal {
+    background: #D2D2D7;
+    border-radius: 3px;
+    min-width: 24px;
+}
+
+QScrollArea#capture_strip_scroll QScrollBar::handle:horizontal:hover,
+QScrollArea#recording_strip_scroll QScrollBar::handle:horizontal:hover {
+    background: #AEAEB2;
+}
+
+QScrollArea#capture_strip_scroll QScrollBar::add-line:horizontal,
+QScrollArea#capture_strip_scroll QScrollBar::sub-line:horizontal,
+QScrollArea#recording_strip_scroll QScrollBar::add-line:horizontal,
+QScrollArea#recording_strip_scroll QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+/* Telas Capturas e Gravações (Figma CaptureGallery) */
+#captures_screen,
+#recordings_screen {
+    background-color: #FFFFFF;
+}
+
+#captures_header,
+#recordings_header,
+#datasets_header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #D2D2D7;
+}
+
+#captures_header_title,
+#recordings_header_title,
+#datasets_header_title {
+    color: #1D1D1F;
+}
+
+#captures_filter_bar,
+#captures_footer,
+#recordings_filter_bar,
+#recordings_footer,
+#datasets_toolbar,
+#datasets_images_toolbar {
+    background-color: #F5F5F7;
+    border-bottom: 1px solid #D2D2D7;
+}
+
+#datasets_classes_panel {
+    background-color: #FFFFFF;
+    border-right: 1px solid #D2D2D7;
+}
+
+#captures_footer,
+#recordings_footer {
+    border-bottom: none;
+    border-top: 1px solid #D2D2D7;
+}
+
+#captures_body,
+#captures_grid_container,
+QScrollArea#captures_scroll,
+QScrollArea#captures_scroll > QWidget > QWidget,
+#recordings_body,
+#recordings_grid_container,
+QScrollArea#recordings_scroll,
+QScrollArea#recordings_scroll > QWidget > QWidget {
+    background-color: #FFFFFF;
+}
+
+#gallery_capture_card,
+#gallery_recording_card {
+    background-color: #050508;
+    border: 1px solid #D2D2D7;
+}
+
+#gallery_capture_card[hovered="true"],
+#gallery_recording_card[hovered="true"] {
+    border-color: #0066CC;
+}
+
+#gallery_capture_card[selected="true"],
+#gallery_recording_card[selected="true"] {
+    border: 2px solid #0066CC;
+}
+
+#gallery_card_checkbox {
+    border-radius: 6px;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+#gallery_card_checkbox[checked="true"] {
+    background-color: #0066CC;
+    border-color: #0066CC;
+}
+
+#gallery_capture_card_image,
+#gallery_recording_card_image {
+    background-color: #050508;
+}
+
+#gallery_capture_card_hover,
+#gallery_recording_card_hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#gallery_capture_card_overlay,
+#gallery_recording_card_overlay {
+    background: qlineargradient(
+        x1:0, y1:1, x2:0, y2:0,
+        stop:0 rgba(0, 0, 0, 0.82),
+        stop:1 rgba(0, 0, 0, 0)
+    );
+}
+
+#gallery_capture_card_filename,
+#gallery_recording_card_filename {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+#gallery_capture_card_datetime,
+#gallery_recording_card_datetime {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* Tela Logs */
+#logs_screen {
+    background-color: #FFFFFF;
+}
+
+#logs_header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #D2D2D7;
+}
+
+#logs_header_title {
+    color: #1D1D1F;
+}
+
+#logs_filter_bar {
+    background-color: #F5F5F7;
+    border-bottom: 1px solid #D2D2D7;
+}
+
+#logs_body {
+    background-color: #FFFFFF;
+}
+
+#logs_table {
+    background-color: #FFFFFF;
+    alternate-background-color: #FFFFFF;
+    gridline-color: #D4D4D4;
+    border: 1px solid #B4B4B4;
+    color: #1D1D1F;
+}
+
+#logs_table::item:selected {
+    background-color: #CCE4F7;
+    color: #1D1D1F;
+}
+
+#logs_table QHeaderView::section {
+    background-color: #F2F2F2;
+    color: #1D1D1F;
+    border: 1px solid #D4D4D4;
+}
+
+#logs_empty {
+    color: #6E6E73;
+}
+
+#captures_empty,
+#recordings_empty {
+    color: #D2D2D7;
+}
+
+QScrollArea#captures_scroll QScrollBar:vertical,
+QScrollArea#recordings_scroll QScrollBar:vertical {
+    background: #F5F5F7;
+    width: 8px;
+    margin: 0;
+}
+
+QScrollArea#captures_scroll QScrollBar::handle:vertical,
+QScrollArea#recordings_scroll QScrollBar::handle:vertical {
+    background: #D2D2D7;
+    border-radius: 4px;
+    min-height: 24px;
+}
+
+QScrollArea#captures_scroll QScrollBar::handle:vertical:hover,
+QScrollArea#recordings_scroll QScrollBar::handle:vertical:hover {
+    background: #AEAEB2;
+}
+
+QScrollArea#captures_scroll QScrollBar::add-line:vertical,
+QScrollArea#captures_scroll QScrollBar::sub-line:vertical,
+QScrollArea#recordings_scroll QScrollBar::add-line:vertical,
+QScrollArea#recordings_scroll QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* ---- QFileDialog (Salvar/Abrir) ---- */
+QFileDialog#visionflow_file_dialog {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+}
+
+QFileDialog#visionflow_file_dialog QLabel {
+    background-color: transparent;
+    color: #6E6E73;
+}
+
+QFileDialog#visionflow_file_dialog QLineEdit,
+QFileDialog#visionflow_file_dialog QComboBox {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+}
+
+QFileDialog#visionflow_file_dialog QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+    selection-background-color: #0066CC;
+    selection-color: #FFFFFF;
+}
+
+QFileDialog#visionflow_file_dialog QListView,
+QFileDialog#visionflow_file_dialog QTreeView,
+QFileDialog#visionflow_file_dialog QTableView,
+QFileDialog#visionflow_file_dialog QAbstractItemView,
+QFileDialog#visionflow_file_dialog QListView::viewport,
+QFileDialog#visionflow_file_dialog QTreeView::viewport,
+QFileDialog#visionflow_file_dialog QTableView::viewport,
+QFileDialog#visionflow_file_dialog QAbstractItemView::viewport {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+    outline: none;
+    alternate-background-color: #F5F5F7;
+}
+
+QFileDialog#visionflow_file_dialog QListView::item,
+QFileDialog#visionflow_file_dialog QTreeView::item {
+    color: #1D1D1F;
+    background-color: transparent;
+}
+
+QFileDialog#visionflow_file_dialog QListView::item:hover,
+QFileDialog#visionflow_file_dialog QTreeView::item:hover {
+    background-color: #F5F5F7;
+}
+
+QFileDialog#visionflow_file_dialog QListView::item:selected,
+QFileDialog#visionflow_file_dialog QTreeView::item:selected {
+    background-color: rgba(0, 102, 204, 0.12);
+    color: #1D1D1F;
+}
+
+QFileDialog#visionflow_file_dialog QHeaderView::section {
+    background-color: #F5F5F7;
+    color: #1D1D1F;
+    border: none;
+    border-bottom: 1px solid #D2D2D7;
+}
+
+QFileDialog#visionflow_file_dialog QPushButton {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+}
+
+QFileDialog#visionflow_file_dialog QPushButton:hover {
+    background-color: #F5F5F7;
+}
+
+QFileDialog#visionflow_file_dialog QPushButton:default {
+    background-color: #0066CC;
+    color: #FFFFFF;
+    border-color: #0066CC;
+}
+
+QFileDialog#visionflow_file_dialog QPushButton:default:hover {
+    background-color: #0058B0;
+}
+
+QFileDialog#visionflow_file_dialog QToolButton {
+    background-color: transparent;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+    border-radius: 4px;
+}
+
+QFileDialog#visionflow_file_dialog QToolButton:hover {
+    background-color: #F5F5F7;
+}
+
+QFileDialog#visionflow_file_dialog QSplitter::handle {
+    background-color: #D2D2D7;
+}
+
+QFileDialog#visionflow_file_dialog QScrollBar:vertical,
+QFileDialog#visionflow_file_dialog QScrollBar:horizontal {
+    background: #F5F5F7;
+}
+
+QFileDialog#visionflow_file_dialog QScrollBar::handle:vertical,
+QFileDialog#visionflow_file_dialog QScrollBar::handle:horizontal {
+    background: #D2D2D7;
+    border-radius: 3px;
+}
+
+QFileDialog#visionflow_file_dialog QScrollBar::handle:vertical:hover,
+QFileDialog#visionflow_file_dialog QScrollBar::handle:horizontal:hover {
+    background: #AEAEB2;
+}
+
+/* ---- QMessageBox (confirmações) ---- */
+QMessageBox#visionflow_message_box {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+}
+
+QMessageBox#visionflow_message_box QLabel {
+    background-color: transparent;
+    color: #1D1D1F;
+}
+
+QMessageBox#visionflow_message_box QPushButton {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+}
+
+QMessageBox#visionflow_message_box QPushButton:hover {
+    background-color: #F5F5F7;
+}
+
+QMessageBox#visionflow_message_box QPushButton:default {
+    background-color: #0066CC;
+    color: #FFFFFF;
+    border-color: #0066CC;
+}
+
+QMessageBox#visionflow_message_box QPushButton:default:hover {
+    background-color: #0058B0;
+}
+
+/* ---- Detalhe de captura (popup) ---- */
+QDialog#capture_detail_dialog {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+}
+
+QDialog#capture_detail_dialog QLabel {
+    background-color: transparent;
+    color: #1D1D1F;
+}
+
+QDialog#capture_detail_dialog QLabel#capture_detail_subtitle {
+    color: #6E6E73;
+}
+
+QDialog#capture_detail_dialog QLabel#capture_detail_preview {
+    background-color: #F5F5F7;
+    border: 1px solid #D2D2D7;
+    border-radius: 6px;
+}
+
+/* ---- Edição de captura (popup) ---- */
+QDialog#capture_edit_dialog,
+QDialog#capture_edit_preview_dialog {
+    background-color: #FFFFFF;
+    color: #1D1D1F;
+}
+
+QDialog#capture_edit_dialog QLabel,
+QDialog#capture_edit_preview_dialog QLabel {
+    background-color: transparent;
+    color: #1D1D1F;
+}
+
+QDialog#capture_edit_dialog QLabel#capture_edit_subtitle,
+QDialog#capture_edit_preview_dialog QLabel#capture_edit_subtitle {
+    color: #6E6E73;
+}
+
+QDialog#capture_edit_dialog QWidget#capture_edit_preview,
+QDialog#capture_edit_dialog QLabel#capture_edit_preview,
+QDialog#capture_edit_preview_dialog QLabel#capture_edit_preview {
+    background-color: #050508;
+    border: 1px solid #D2D2D7;
+    border-radius: 6px;
+}
+
+QDialog#recording_detail_dialog QLabel#recording_detail_subtitle {
+    color: #6E6E73;
+}
+
+QDialog#recording_detail_dialog QWidget#recording_detail_preview,
+QDialog#recording_detail_dialog QVideoWidget#recording_detail_video {
+    background-color: #050508;
+    border: 1px solid #D2D2D7;
+    border-radius: 6px;
+}
+

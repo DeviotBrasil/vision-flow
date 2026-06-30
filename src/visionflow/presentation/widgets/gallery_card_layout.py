@@ -1,0 +1,7 @@
+"""Dimensões compartilhadas dos cards da galeria (Capturas e Gravações)."""
+
+GALLERY_CARD_WIDTH = 172
+GALLERY_CARD_HEIGHT = 129
+GALLERY_CARD_OVERLAY_HEIGHT = 37
+GALLERY_CARD_IMAGE_INSET = 1
+GALLERY_CARD_IMAGE_RADIUS = 11
